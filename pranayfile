@@ -20,4 +20,9 @@ stage('CheckOutCode'){
   {
   sh "echo 'Testing Passed'"
   }
+  
+  stage('Delivery')
+  {
+  sh "scp  /home/ubuntu/.jenkins/workspace/sunilpipeline/target/maven-web-application.war   ubuntu@172.31.9.111:/var/lib/tomcat8/webapps/prod.war"
+  }
 }
