@@ -1,0 +1,14 @@
+node{
+
+stage('CheckOutCode'){
+    steps{
+    git branch: 'master', credentialsId: ''0cc3d7c5-31f8-4a9d-8967-78cce9f78c79', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
+	
+	}
+  }
+  
+  stage('Build'){
+  steps{
+  sh  "mvn clean package"
+  }
+  }
