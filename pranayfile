@@ -12,4 +12,8 @@ stage('CheckOutCode'){
            sh  "mvn clean package"
   
   }
+  stage('Deployment')
+  {
+  sh "scp  /home/ubuntu/.jenkins/workspace/sunilpipeline/target/maven-web-application.war   ubuntu@172.31.15.248:/var/lib/tomcat8/webapps/qaenv.war"
+  }
 }
